@@ -19,8 +19,6 @@ const Converter = () => {
 
   const handleCurrencyChange = (selectedCurrency) => {
     setBaseCurrency(selectedCurrency)
-    
-    
   }
 
   return (

@@ -1,5 +1,3 @@
-'use client'
-
 import React from 'react'
 import downArrow from '../assets/dropdown-icon.svg'
 import Image from 'next/image'
