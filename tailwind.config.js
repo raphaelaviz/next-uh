@@ -17,10 +17,10 @@ module.exports = {
           
             title: '#091135',
             lighter: '#8494a5',
-            darker: '#3c4a5b', ////e valor das moedas. ALTERNATIVA: 9aa7b5
+            darker: '#3c4a5b',
           
           
-          lightGray: '#f5f9fc',  // INPUT FIELD BG
+          lightGray: '#f5f9fc',
         },
       },
     },
