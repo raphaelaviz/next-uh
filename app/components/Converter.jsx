@@ -6,7 +6,7 @@ import SingleCurrencyRow from './SingleCurrencyRow'
 import { currencyMap } from '../lib/currenciesMap'
 import CurrencyInput from './CurrencyInput'
 import CurrencyDropdown from './CurrencyDropdown'
-import { revalidateTag } from "next/cache";
+
 
 const Converter = () => {
   const [baseCurrency, setBaseCurrency] = useState('USD') //TC01 
@@ -18,7 +18,6 @@ const Converter = () => {
   };
 
   const handleCurrencyChange = (selectedCurrency) => {
-    revalidateTag('main')
     setBaseCurrency(selectedCurrency)
   }
 
