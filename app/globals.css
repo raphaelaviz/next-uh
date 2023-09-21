@@ -2,26 +2,63 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+/* I like to keep long style classes in this file to make the code a bit cleaner.
+   Also I use custom classes (example: flex-center) to encapsulate others classes 
+   and make the styling more efficient.
+*/
+
+.flex-center {
+    @apply flex items-center justify-center
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+/* Navbar styles */
+.navbar {
+    @apply flex items-center justify-between px-12 sm:px-24 py-4
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.login_button {
+    @apply bg-green-500 flex-center hover:bg-green-600 w-24 py-2 px-4 rounded-full text-white font-semibold text-sm
+}
+
+
+/*Converter styles*/
+
+.converter_container {
+    @apply flex flex-col items-center text-center mt-14 w-[250px] sm:w-[500px]
+}
+
+.converter_title {
+    @apply sm:text-[2rem] text-[1.7rem] font-bold text-uphold-title
+}
+/* Footer styles */
+
+.footer_main {
+    @apply flex-center lg:px-20 py-6 px-5 w-full text-uphold-lighter
+}
+
+.footer_container {
+  @apply  flex-center flex-col gap-16 border-t-[1px] border-opacity-50
+}
+
+.footer_sections {
+    @apply text-center sm:text-left sm:flex space-y-10 sm:space-y-0 sm:space-x-20 mt-16
+}
+
+.footer_column {
+    @apply flex flex-col gap-3 text-sm
+}
+
+.lower_footer {
+    @apply sm:flex justify-between w-full text-[8px] sm:text-xs font-normal
+}
+
+
+
+/*Removes up and down arrows from the number input field*/
+
+  .no-arrows::-webkit-inner-spin-button,
+.no-arrows::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
 }

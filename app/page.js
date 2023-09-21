@@ -1,21 +1,15 @@
-import Image from 'next/image'
+import Converter from "./components/Converter"
+import { useFilteredCurrencyPairs } from "./hooks/useFilteredCurrencyPairs";
+import { getCurrencies } from "./lib/utils";
 
-
-
-async function getCurrencies() {
-  const response = await fetch('https://api.uphold.com/v0/ticker/USD', { next: { revalidate: 5 } })
-  if (!response.ok) {
-    throw new Error('Failed to fetch data')
-  }
-  return response.json()
-}
 
 export default async function Page() {
-  const currencies = await getCurrencies()
-  return (
-  <main>
 
-<pre>{JSON.stringify(currencies, null, 2)}</pre>
+  const currenciesData = await getCurrencies('USD')
+
+  return (
+  <main className="min-h-screen flex">
+    <Converter/>    
   </main>
   )
 }

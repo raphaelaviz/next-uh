@@ -1,18 +1,24 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [
-    './pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './components/**/*.{js,ts,jsx,tsx,mdx}',
-    './app/**/*.{js,ts,jsx,tsx,mdx}',
-  ],
+  content: ["./src/**/*.{html,js,jsx, css}"],
   theme: {
     extend: {
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+      fontFamily: {
+        proxima: ['proxima_nova', 'sans'],
+        proximaBold: ['proxima_nova_bold', 'sans'], 
+      },
+      colors: {
+        uphold: {
+          
+            title: '#091135',
+            lighter: '#8494a5',
+            darker: '#3c4a5b', ////e valor das moedas. ALTERNATIVA: 9aa7b5
+          
+          
+          lightGray: '#f5f9fc',  // INPUT FIELD BG
+        },
       },
     },
   },
-  plugins: [],
+  plugins: [require("daisyui")],
 }
