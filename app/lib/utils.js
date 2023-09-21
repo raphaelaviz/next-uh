@@ -1,13 +1,13 @@
 'use server'
-
-import { revalidateTag } from "next/cache";
+import { revalidatePath, revalidateTag } from "next/cache";
 
 export async function getCurrencies(baseCurrency) {
   
-  const response = await fetch(`https://api.uphold.com/v0/ticker/${baseCurrency}`, 
+  const response = await fetch(`${process.env.API_ENDPOINT}/${baseCurrency}`, 
   { next: { tags: ['main'] } }
   );
-  revalidateTag('main')
+  revalidatePath('/')
+    revalidateTag('main')
   if (!response.ok) {
     throw new Error('Failed to fetch data');
   }

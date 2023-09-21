@@ -13,6 +13,7 @@ export function useFilteredCurrencyPairs(baseCurrency) {
 
   const fetchCurrencyPairs = useMemo(() => async () => { //TC04
     try {
+      
       const allPairs = await getCurrencies(baseCurrency)
       const pairs = allPairs.filter((pairData) => {
         const pair = pairData.pair;
