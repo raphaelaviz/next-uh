@@ -30,7 +30,6 @@ const Converter = () => {
             <h2 className='sm:mx-[70px] mt-3 text-uphold-lighter'>
               Receive competitive and transparent pricing with no hidden spreads. See
               how we compare.
-              <pre>{JSON.stringify(desiredPairs, null, 2)}</pre>
             </h2>
     
 
